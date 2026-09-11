@@ -38,13 +38,13 @@ export function Header() {
 
   return (
     <header
-      className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-        scrolled
-          ? 'border-b border-border/60 bg-white backdrop-blur-xl'
-          : 'border-b border-transparent bg-transparent'
-      )}
-    >
+  className={cn(
+    'fixed top-0 left-0 right-0 z-50 w-full overflow-x-hidden transition-all duration-300',
+    scrolled
+      ? 'border-b border-border/60 bg-white'
+      : 'border-b border-transparent bg-transparent'
+  )}
+>
       <div className="container-mw container-px">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-3" aria-label={siteConfig.name}>
