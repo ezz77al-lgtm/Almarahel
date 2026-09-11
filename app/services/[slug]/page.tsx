@@ -55,7 +55,6 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       />
       <Breadcrumbs items={[{ name: 'خدماتنا', path: '/services' }, { name: service.name, path: `/services/${service.slug}` }]} />
 
-      ```tsx
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-primary-dark pt-20">
         <div className="absolute inset-0 -z-10">
@@ -112,7 +111,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           </div>
         </div>
       </section>
-```
+
 
 
       {/* Introduction */}

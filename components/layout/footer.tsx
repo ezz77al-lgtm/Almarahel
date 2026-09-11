@@ -117,6 +117,9 @@ export function Footer() {
           <p className="text-sm text-primary-foreground/50">
             {siteConfig.city}، {siteConfig.country}
           </p>
+          <p className="text-sm text-primary-foreground/50">
+             مهندس الموقع : عزالدين منصور
+          </p>
         </div>
       </div>
     </footer>
