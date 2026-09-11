@@ -1,0 +1,45 @@
+export const siteConfig = {
+  name: 'شركة المراحل السريعة',
+  nameShort: 'المراحل السريعة',
+  nameEn: 'Al Marahil Al Saree\'a',
+  url: 'https://almarahil-sareea.sa',
+  title: 'شركة المراحل السريعة | مقاولات وتشطيبات وديكورات في جدة',
+  description:
+    'شركة المراحل السريعة في جدة — متخصصون في تركيب السيراميك والبورسلان والرخام وأعمال الدهانات والديكورات وتنظيف الواجهات الزجاجية. جودة عالية والتزام بالمواعيد.',
+  keywords: [
+    'شركة مقاولات في جدة',
+    'تشطيبات في جدة',
+    'تركيب سيراميك جدة',
+    'تركيب بورسلان جدة',
+    'تركيب رخام جدة',
+    'دهانات وديكورات جدة',
+    'تنظيف واجهات زجاجية جدة',
+    'مقاولات جدة',
+    'المراحل السريعة',
+  ],
+  phone: '+966557906206',
+  phoneDisplay: '0557906206',
+  whatsapp: '966557906206',
+  email: 'info@almarahil-sareea.sa',
+  address: 'جدة، المملكة العربية السعودية',
+  city: 'جدة',
+  cityEn: 'Jeddah',
+  country: 'المملكة العربية السعودية',
+  workingHours: 'السبت - الخميس: 8 صباحًا - 10 مساءً',
+  social: {
+    twitter: '#',
+    instagram: '#',
+    linkedin: '#',
+    snapchat: '#',
+  },
+  nav: [
+    { label: 'الرئيسية', href: '/' },
+    { label: 'خدماتنا', href: '/services' },
+    { label: 'مشاريعنا', href: '/projects' },
+    { label: 'المدونة', href: '/blog' },
+    { label: 'من نحن', href: '/about' },
+    { label: 'اتصل بنا', href: '/contact' },
+  ],
+};
+
+export type SiteConfig = typeof siteConfig;
