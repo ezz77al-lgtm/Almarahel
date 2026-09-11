@@ -66,13 +66,14 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-base font-bold text-accent-foreground btn-press transition-all hover:brightness-95"
+            <a
+              href={`https://wa.me/${siteConfig.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-base font-bold text-accent-foreground shadow-xl btn-press transition-all hover:brightness-95"
             >
-              اطلب الخدمة الآن
-              <ArrowUpLeft className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1" />
-            </Link>
+             طلب الخدمة فوراً
+            </a>
             <a
               href={`https://wa.me/${siteConfig.whatsapp}`}
               target="_blank"

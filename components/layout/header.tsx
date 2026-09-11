@@ -181,12 +181,14 @@ export function Header() {
                   <Phone className="h-4 w-4" />
                   اتصل الآن
                 </a>
-                <Link
-                  href="/contact"
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-lg bg-primary px-5 py-3 text-center text-sm font-bold text-primary-foreground btn-press"
                 >
                   اطلب الخدمة
-                </Link>
+                </a>
               </div>
             </nav>
           </div>
