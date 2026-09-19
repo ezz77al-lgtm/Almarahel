@@ -959,7 +959,7 @@ export const services: Service[] = [
       'عقد تنظيف معارض جدة',
       'عقد تنظيف معارض المدينة المنورة',
     ],
-    image: '/services/glass-facade-cleaning.webp',
+    image: '/services/exhibitions.webp',
     imageAlt: 'تنظيف زجاج واجهة معرض تجاري',
     benefits: [
       {
@@ -1111,7 +1111,7 @@ export const services: Service[] = [
       'عقد تنظيف مطاعم جدة',
       'عقد تنظيف مطاعم المدينة المنورة',
     ],
-    image: '/services/glass-facade-cleaning.webp',
+    image: '/services/restaurant.webp',
     imageAlt: 'تنظيف زجاج واجهة مطعم',
     benefits: [
       {
@@ -1261,7 +1261,7 @@ export const services: Service[] = [
       'عقد تنظيف مقاهي جدة',
       'عقد تنظيف مقاهي المدينة المنورة',
     ],
-    image: '/services/glass-facade-cleaning.webp',
+    image: '/services/cafes.webp',
     imageAlt: 'تنظيف زجاج واجهة مقهى',
     benefits: [
       {
@@ -1403,7 +1403,7 @@ export const services: Service[] = [
       'تنظيف دوري للمراكز',
       'عقود تنظيف شهرية للمراكز',
     ],
-    image: '/services/glass-facade-cleaning.webp',
+    image: '/services/centers.webp',
     imageAlt: 'تنظيف زجاج مركز تجاري',
     benefits: [
       {
