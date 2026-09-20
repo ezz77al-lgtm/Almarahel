@@ -75,6 +75,7 @@ export const siteConfig = {
     { label: 'مشاريعنا', href: '/projects' },
     { label: 'المدونة', href: '/blog' },
     { label: 'من نحن', href: '/about' },
+    { label: 'المدن ', href: '/locations' },
     { label: 'اتصل بنا', href: '/contact' },
   ],
 };

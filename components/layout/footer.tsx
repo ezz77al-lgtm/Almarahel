@@ -13,7 +13,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent overflow-hidden">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white overflow-hidden shadow-[0_0_14px_rgba(96,165,250,0.55)]">
                 <Image
                   src="/icon.jpeg"
                   alt={`شعار ${siteConfig.name}`}
@@ -59,45 +59,52 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="mb-5 font-display text-base font-bold">
-              خدماتنا
-            </h3>
 
-            <ul className="space-y-3">
-              {services.slice(0, 7).map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary dark:hover:text-accent"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+{/* Services + Links */}
+<div className="grid grid-cols-2 gap-6 lg:contents">
 
-          {/* Links */}
-          <div>
-            <h3 className="mb-5 font-display text-base font-bold">
-              روابط سريعة
-            </h3>
+  {/* Services */}
+  <div>
+    <h3 className="mb-5 font-display text-base font-bold">
+      خدماتنا
+    </h3>
 
-            <ul className="space-y-3">
-              {siteConfig.nav.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-primary-foreground/60 transition-colors hover:text-accent"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <ul className="space-y-3">
+      {services.slice(0, 7).map((service) => (
+        <li key={service.slug}>
+          <Link
+            href={`/services/${service.slug}`}
+            className="text-sm text-muted-foreground transition-colors hover:text-primary dark:hover:text-accent"
+          >
+            {service.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Links */}
+  <div>
+    <h3 className="mb-5 font-display text-base font-bold">
+      روابط سريعة
+    </h3>
+
+    <ul className="space-y-3">
+      {siteConfig.nav.map((item) => (
+        <li key={item.href}>
+          <Link
+            href={item.href}
+            className="text-sm text-primary-foreground/60 transition-colors hover:text-accent"
+          >
+            {item.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+</div>
+
 
           {/* Contact */}
           <div>

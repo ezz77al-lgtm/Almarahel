@@ -76,7 +76,7 @@ export function generateMetadata({
     title: city.seoTitle,
     description: city.seoDescription,
     path: `/locations/${city.slug}`,
-  });
+  }); 
 }
 
 export default function LocationPage({

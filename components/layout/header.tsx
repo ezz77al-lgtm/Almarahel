@@ -48,7 +48,7 @@ export function Header() {
       <div className="container-mw container-px">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-3" aria-label={siteConfig.name}>
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent overflow-hidden">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white overflow-hidden shadow-[0_0_20px_rgba(96,165,250,0.8)]">
                 <Image
                   src="/icon.jpeg"
                   alt={`شعار ${siteConfig.name}`}
