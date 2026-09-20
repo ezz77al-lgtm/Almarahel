@@ -347,7 +347,7 @@ export default function HomePage() {
               </p>
 
               <Link
-                href="/locations/city"
+                href="/contact"
                 className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-primary-foreground btn-press transition-all hover:bg-primary-dark"
               >
                 تحقق من تغطيتك
