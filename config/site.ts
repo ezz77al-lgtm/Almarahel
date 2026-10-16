@@ -8,11 +8,17 @@ export const siteConfig = {
   // Contact configuration
   // TODO: Replace these placeholder numbers with the real company WhatsApp and phone numbers.
   // The WhatsApp number must be in international format without + or spaces (e.g. 9665XXXXXXXX).
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '',
-  phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || '',
+
+  // Contact configuration
+  whatsappNumber:
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '966557906206',
+  phoneNumber:
+    process.env.NEXT_PUBLIC_PHONE_NUMBER || '966557906206',
   email: process.env.NEXT_PUBLIC_EMAIL || '',
+
   // Set to true when real contact details are configured
-  contactConfigured: false,
+  contactConfigured: true,
+
   // Social links — only set when verified
   socialLinks: {
     twitter: '',
