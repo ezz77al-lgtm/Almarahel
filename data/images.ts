@@ -1,0 +1,56 @@
+export const images = {
+  hero: [
+    {
+      url: '/hero/hero0.png',
+      alt: 'تنظيف واجهة زجاجية لمبنى مرتفع',
+    },
+    {
+      url: '/hero/hero1.png',
+      alt: 'تنظيف داخلي احترافي لمساحة عصرية',
+    },
+    {
+      url: '/hero/hero2.png',
+      alt: 'تركيب أرضيات رخامية فاخرة',
+    },
+  ],
+  services: {
+    'glass-facade-cleaning': 'https://images.pexels.com/photos/17041922/pexels-photo-17041922.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'storefront-cleaning': 'https://images.pexels.com/photos/14925511/pexels-photo-14925511.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'home-cleaning': 'https://images.pexels.com/photos/6207816/pexels-photo-6207816.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'building-cleaning': 'https://images.pexels.com/photos/38798439/pexels-photo-38798439.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'office-cleaning': 'https://images.pexels.com/photos/1128207/pexels-photo-1128207.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'post-construction-cleaning': 'https://images.pexels.com/photos/27134625/pexels-photo-27134625.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'ceramic-installation': 'https://images.pexels.com/photos/11806490/pexels-photo-11806490.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'porcelain-installation': 'https://images.pexels.com/photos/18861859/pexels-photo-18861859.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'marble-installation': 'https://images.pexels.com/photos/7412599/pexels-photo-7412599.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'marble-polishing': 'https://images.pexels.com/photos/30112371/pexels-photo-30112371.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'interior-painting': 'https://images.pexels.com/photos/5583126/pexels-photo-5583126.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  cities: {
+    jeddah: 'https://images.pexels.com/photos/34744916/pexels-photo-34744916.jpeg?auto=compress&cs=tinysrgb&w=800',
+    riyadh: 'https://images.pexels.com/photos/38096888/pexels-photo-38096888.jpeg?auto=compress&cs=tinysrgb&w=800',
+    madinah: 'https://images.pexels.com/photos/17261869/pexels-photo-17261869.jpeg?auto=compress&cs=tinysrgb&w=800',
+    qassim: 'https://images.pexels.com/photos/28170223/pexels-photo-28170223.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  projects: {
+    p1: 'https://images.pexels.com/photos/38921234/pexels-photo-38921234.jpeg?auto=compress&cs=tinysrgb&w=800',
+    p2: 'https://images.pexels.com/photos/7045766/pexels-photo-7045766.jpeg?auto=compress&cs=tinysrgb&w=800',
+    p3: 'https://images.pexels.com/photos/27134625/pexels-photo-27134625.jpeg?auto=compress&cs=tinysrgb&w=800',
+    p4: 'https://images.pexels.com/photos/14925511/pexels-photo-14925511.jpeg?auto=compress&cs=tinysrgb&w=800',
+    p5: 'https://images.pexels.com/photos/7566201/pexels-photo-7566201.jpeg?auto=compress&cs=tinysrgb&w=800',
+    p6: 'https://images.pexels.com/photos/6764270/pexels-photo-6764270.jpeg?auto=compress&cs=tinysrgb&w=800',
+    p7: 'https://images.pexels.com/photos/1128207/pexels-photo-1128207.jpeg?auto=compress&cs=tinysrgb&w=800',
+    p8: 'https://images.pexels.com/photos/11806490/pexels-photo-11806490.jpeg?auto=compress&cs=tinysrgb&w=800',
+    p9: 'https://images.pexels.com/photos/29502230/pexels-photo-29502230.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  articles: {
+    a1: 'https://images.pexels.com/photos/17041922/pexels-photo-17041922.jpeg?auto=compress&cs=tinysrgb&w=800',
+    a2: 'https://images.pexels.com/photos/12741260/pexels-photo-12741260.jpeg?auto=compress&cs=tinysrgb&w=800',
+    a3: 'https://images.pexels.com/photos/11806490/pexels-photo-11806490.jpeg?auto=compress&cs=tinysrgb&w=800',
+    a4: 'https://images.pexels.com/photos/30112371/pexels-photo-30112371.jpeg?auto=compress&cs=tinysrgb&w=800',
+    a5: 'https://images.pexels.com/photos/5583126/pexels-photo-5583126.jpeg?auto=compress&cs=tinysrgb&w=800',
+    a6: 'https://images.pexels.com/photos/18861859/pexels-photo-18861859.jpeg?auto=compress&cs=tinysrgb&w=800',
+    a7: 'https://images.pexels.com/photos/1128207/pexels-photo-1128207.jpeg?auto=compress&cs=tinysrgb&w=800',
+    a8: 'https://images.pexels.com/photos/27134625/pexels-photo-27134625.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+};
