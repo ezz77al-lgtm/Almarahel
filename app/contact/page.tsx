@@ -20,7 +20,7 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={generateBreadcrumbSchema([{ name: 'الرئيسية', url: '/' }, { name: 'تواصل معنا', url: '/contact' }])} />
-      <JsonLd data={generateWebPageSchema({ name: 'تواصل معنا', description: 'طرق التواصل مع شركة المراحل السريعة للاستفسار عن خدمات التنظيف والتشطيبات.', path: '/contact' })} />
+      <JsonLd data={generateWebPageSchema({ name: 'تواصل معنا', description: 'طرق التواصل مع شركة المراحل السريعة للاستفسار عن خدمات التنظيف وتركيب الارضيات.', path: '/contact' })} />
     <div className="pt-24 pb-16">
       <div className="container mx-auto px-4 lg:px-8">
         <Breadcrumbs

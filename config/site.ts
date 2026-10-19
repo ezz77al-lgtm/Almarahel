@@ -26,8 +26,8 @@ export const siteConfig = {
     instagram: '',
     linkedin: '',
   },
-  // Analytics
-  gaId: process.env.NEXT_PUBLIC_GA_ID || '',
+// Analytics
+gaId: process.env.NEXT_PUBLIC_GA_ID || 'G-692YS31ML8',
   // Search console verification
   searchConsoleToken: process.env.NEXT_PUBLIC_SEARCH_CONSOLE_TOKEN || '',
 };

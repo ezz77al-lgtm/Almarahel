@@ -53,7 +53,7 @@ export function ServiceCard({
       <div className="relative z-10 flex min-h-[390px] flex-col justify-end p-5 text-white pointer-events-none">
         <div className="mb-3">
           <span className="inline-flex rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-medium text-white backdrop-blur-md">
-            خدمات التنظيف والتشطيبات
+            خدمات التنظيف 
           </span>
         </div>
 

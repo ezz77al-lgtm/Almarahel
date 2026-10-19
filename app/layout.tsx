@@ -1,12 +1,17 @@
+
 import './globals.css';
 import type { Metadata } from 'next';
 import { Tajawal } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingContact } from '@/components/layout/floating-contact';
 import { siteConfig } from '@/config/site';
 import { JsonLd } from '@/components/seo/json-ld';
-import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/seo';
+import {
+  generateOrganizationSchema,
+  generateWebsiteSchema,
+} from '@/lib/seo';
 
 const tajawal = Tajawal({
   subsets: ['arabic'],
@@ -54,10 +59,15 @@ export default function RootLayout({
       <body className={`${tajawal.variable} font-tajawal antialiased`}>
         <JsonLd data={generateOrganizationSchema()} />
         <JsonLd data={generateWebsiteSchema()} />
+
         <Header />
         <main>{children}</main>
         <Footer />
         <FloatingContact />
+
+        {siteConfig.gaId && (
+          <GoogleAnalytics gaId={siteConfig.gaId} />
+        )}
       </body>
     </html>
   );

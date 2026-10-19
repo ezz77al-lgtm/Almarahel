@@ -65,7 +65,7 @@ export function Header() {
             href="/"
             aria-label={`${siteConfig.name} - الصفحة الرئيسية`}
             className="flex shrink-0 items-center gap-2.5 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
-          >
+          > 
             {/* إطار الشعار مع الظل الأزرق */}
             <span
               className={cn(
@@ -88,10 +88,10 @@ export function Header() {
               <Image
                 src="/icon.jpeg"
                 alt={`شعار ${siteConfig.name}`}
-                width={44}
-                height={44}
+                width={56}
+                height={56}
                 priority
-                sizes="44px"
+                sizes="56px"
                 className="h-full w-full object-contain"
               />
             </span>

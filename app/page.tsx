@@ -14,7 +14,7 @@ import { JsonLd } from '@/components/seo/json-ld';
 import { generateWebPageSchema, generateMetadata } from '@/lib/seo';
 import { siteConfig } from '@/config/site';
 export const metadata = generateMetadata({
-  title: 'خدمات التنظيف وتركيب الأرضيات والتشطيبات',
+  title: 'خدمات التنظيف وتركيب الأرضيات وتنظيف الواجهات الزجاجية',
   description: 'شركة المراحل السريعة تقدم خدمات تنظيف الواجهات الزجاجية والمنازل والمباني والمكاتب، وتنظيف ما بعد البناء وتركيب الأرضيات والدهانات الداخلية في جدة والرياض والمدينة المنورة والقصيم.',
   path: '/',
 });
