@@ -4,6 +4,7 @@ import type { Service } from '@/data/services';
 import { buildWhatsAppUrl, buildServiceMessage } from '@/lib/whatsapp';
 import { cities } from '@/data/cities';
 import { cn } from '@/lib/utils';
+import { TrackedWhatsAppLink } from '@/components/analytics/tracked-whatsapp-link';
 
 interface ServiceCardProps {
   service: Service;
@@ -89,22 +90,24 @@ export function ServiceCard({
             <ArrowLeft className="h-3.5 w-3.5" />
           </Link>
 
-          {waUrl ? (
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mr-auto inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-3 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:scale-105 hover:bg-[#1da851]"
-            >
-              <MessageCircle className="h-4 w-4" />
-              اطلب عبر واتساب
-            </a>
-          ) : (
-            <span className="mr-auto inline-flex items-center gap-2 rounded-lg bg-white/15 px-3 py-2.5 text-xs font-bold text-white/70">
-              <MessageCircle className="h-4 w-4" />
-              اطلب عبر واتساب
-            </span>
-          )}
+          
+            {waUrl ? (
+              <TrackedWhatsAppLink
+                href={waUrl}
+                serviceName={service.shortName}
+                cityName={cityName}
+                className="mr-auto inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-3 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:scale-105 hover:bg-[#1da851]"
+              >
+                <MessageCircle className="h-4 w-4" />
+                اطلب عبر واتساب
+              </TrackedWhatsAppLink>
+            ) : (
+              <span className="mr-auto inline-flex items-center gap-2 rounded-lg bg-white/15 px-3 py-2.5 text-xs font-bold text-white/70">
+                <MessageCircle className="h-4 w-4" />
+                اطلب عبر واتساب
+              </span>
+            )}
+
         </div>
       </div>
     </article>

@@ -79,7 +79,7 @@ export function Header() {
                       'shadow-[0_0_10px_rgba(59,130,246,0.18)]',
                     ].join(' ')
                   : [
-                      'border-white/40 bg-white/10',
+                      'border-white/40 bg-white',
                       'backdrop-blur-sm',
                       'shadow-[0_0_14px_rgba(56,189,248,0.28)]',
                     ].join(' ')
