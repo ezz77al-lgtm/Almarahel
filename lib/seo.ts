@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import { toE164 } from '@/lib/whatsapp';
 
 interface GenerateMetadataParams {
   title?: string;
@@ -19,13 +20,19 @@ export function generateMetadata({
     : siteConfig.name;
   const desc = description || siteConfig.description;
   const url = `${siteConfig.url}${path}`;
+  const imageUrl = image
+    ? image.startsWith('http')
+      ? image
+      : `${siteConfig.url}${image}`
+    : undefined;
 
   return {
-    title: fullTitle,
+    // absolute يمنع تكرار اسم الشركة من قالب العنوان في layout.tsx
+    title: { absolute: fullTitle },
     description: desc,
     alternates: {
-  canonical: url,
-},
+      canonical: url,
+    },
     openGraph: {
       type: 'website',
       locale: 'ar_SA',
@@ -33,13 +40,13 @@ export function generateMetadata({
       title: fullTitle,
       description: desc,
       siteName: siteConfig.name,
-      images: image ? [{ url: image }] : undefined,
+      images: imageUrl ? [{ url: imageUrl }] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
       description: desc,
-      images: image ? [image] : undefined,
+      images: imageUrl ? [imageUrl] : undefined,
     },
   };
 }
@@ -70,18 +77,24 @@ export function generateServiceSchema(service: {
   name: string;
   description: string;
   url: string;
+  areaServed?: string[];
 }) {
-  return {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: service.name,
     description: service.description,
-    provider: {
-      '@type': 'Organization',
-      name: siteConfig.name,
-    },
+    provider: { '@id': `${siteConfig.url}/#organization` },
     url: buildUrl(service.url),
   };
+  if (service.areaServed && service.areaServed.length > 0) {
+    schema.areaServed = service.areaServed.map((name) => ({
+      '@type': 'City',
+      name,
+      containedInPlace: { '@type': 'Country', name: 'المملكة العربية السعودية' },
+    }));
+  }
+  return schema;
 }
 
 export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
@@ -126,20 +139,50 @@ export function generateArticleSchema(article: {
 }
 
 export function generateOrganizationSchema() {
+  const b = siteConfig.business;
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'LocalBusiness',
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
+    logo: `${siteConfig.url}/icon.jpeg`,
+    image: `${siteConfig.url}/icon.jpeg`,
+    inLanguage: 'ar-SA',
+    areaServed: [
+      'جدة',
+      'الرياض',
+      'المدينة المنورة',
+      'منطقة القصيم',
+    ].map((name) => ({ '@type': 'City', name })),
   };
 
   if (siteConfig.email) {
     schema.email = siteConfig.email;
   }
   if (siteConfig.phoneNumber) {
-    schema.telephone = siteConfig.phoneNumber;
+    schema.telephone = toE164(siteConfig.phoneNumber);
+  }
+  if (b.streetAddress || b.locality) {
+    schema.address = {
+      '@type': 'PostalAddress',
+      ...(b.streetAddress && { streetAddress: b.streetAddress }),
+      ...(b.locality && { addressLocality: b.locality }),
+      ...(b.region && { addressRegion: b.region }),
+      ...(b.postalCode && { postalCode: b.postalCode }),
+      addressCountry: 'SA',
+    };
+  }
+  if (b.foundedYear) {
+    schema.foundingDate = b.foundedYear;
+  }
+  if (b.openingHours) {
+    schema.openingHours = b.openingHours;
+  }
+  const sameAs = Object.values(siteConfig.socialLinks).filter(Boolean);
+  if (sameAs.length > 0) {
+    schema.sameAs = sameAs;
   }
 
   return schema;

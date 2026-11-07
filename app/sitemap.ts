@@ -10,7 +10,7 @@ import { getCityServiceCombinations } from '@/data/city-services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
-  const now = new Date();
+  const now = new Date(siteConfig.contentUpdatedAt);
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${base}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { generateMetadata as generatePageMetadata, generateBreadcrumbSchema, buildUrl } from '@/lib/seo';
 import { Breadcrumbs } from '@/components/layout/breadcrumbs';
 import { WhatsAppCTA } from '@/components/layout/cta-buttons';
-import { getProject } from '@/data/projects';
+import { projects, getProject } from '@/data/projects';
 import { getServiceById } from '@/data/services';
 import { getCityById } from '@/data/cities';
 import Link from 'next/link';
@@ -14,17 +14,7 @@ interface PageProps {
 
 import { JsonLd } from '@/components/seo/json-ld';
 export function generateStaticParams() {
-  return [
-    { slug: 'glass-facade-cleaning-commercial-building-jeddah' },
-    { slug: 'marble-polishing-villa-riyadh' },
-    { slug: 'post-construction-cleaning-apartment-madinah' },
-    { slug: 'storefront-cleaning-mall-jeddah' },
-    { slug: 'porcelain-installation-office-riyadh' },
-    { slug: 'interior-painting-villa-jeddah' },
-    { slug: 'office-cleaning-company-riyadh' },
-    { slug: 'ceramic-installation-kitchen-madinah' },
-    { slug: 'glass-facade-cleaning-qassim' },
-  ];
+  return projects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -76,7 +66,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
 
         {/* Hero */}
         <div className="mt-6 relative rounded-2xl overflow-hidden h-72 lg:h-96 mb-8">
-          <img
+          <img decoding="async"
             src={project.image}
             alt={project.imageAlt}
             className="h-full w-full object-cover"

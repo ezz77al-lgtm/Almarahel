@@ -33,7 +33,7 @@ export function ServiceCard({
       )}
     >
       {/* صورة الخلفية: تغطي البطاقة بالكامل */}
-      <img
+      <img decoding="async"
         src={service.image}
         alt={service.imageAlt}
         loading="lazy"

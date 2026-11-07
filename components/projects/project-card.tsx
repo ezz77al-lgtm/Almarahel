@@ -12,10 +12,10 @@ export function ProjectCard({ project }: { project: Project }) {
       className="group relative block overflow-hidden rounded-xl bg-card shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
     >
       <div className="relative h-80 overflow-hidden">
-        <img
+        <img decoding="async"
           src={project.image}
           alt={project.imageAlt}
-          className="h-800 w-1200 object-cover transition-transform duration-500 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
         />
 
