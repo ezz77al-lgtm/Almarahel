@@ -13,6 +13,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import Link from 'next/link';
+import { QuoteForm } from '@/components/contact/quote-form';
+import { services as allServices } from '@/data/services';
 import { CheckCircle, AlertCircle, ArrowLeft } from 'lucide-react';
 
 interface PageProps {
@@ -21,7 +23,7 @@ interface PageProps {
 
 import { JsonLd } from '@/components/seo/json-ld';
 export function generateStaticParams() {
-  return [{ slug: 'glass-facade-cleaning' }, { slug: 'storefront-cleaning' }, { slug: 'home-cleaning' }, { slug: 'building-cleaning' }, { slug: 'office-cleaning' }, { slug: 'post-construction-cleaning' }, { slug: 'ceramic-installation' }, { slug: 'porcelain-installation' }, { slug: 'marble-installation' }, { slug: 'marble-polishing' }, { slug: 'interior-painting' }];
+  return allServices.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -53,6 +55,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
     name: service.name,
     description: service.description,
     url: `/services/${service.slug}`,
+    areaServed: availableCities.map((c) => c.name),
   });
 
   return (
@@ -72,7 +75,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
 
         {/* Hero */}
         <div className="mt-6 relative rounded-2xl overflow-hidden h-72 lg:h-96 mb-8">
-          <img
+          <img decoding="async"
             src={service.image}
             alt={service.imageAlt}
             className="h-full w-full object-cover"
@@ -204,6 +207,16 @@ export default function ServiceDetailPage({ params }: PageProps) {
                 variant="whatsapp"
                 label="تواصل عبر واتساب"
                 className="w-full"
+              />
+            </div>
+
+            {/* Quote form */}
+            <div className="p-6 rounded-xl bg-card border border-border/50 shadow-sm">
+              <h3 className="font-bold text-base mb-4">اطلب عرض سعر</h3>
+              <QuoteForm
+                services={allServices.map((s) => ({ id: s.id, name: s.name }))}
+                cities={availableCities.map((c) => ({ id: c.id, name: c.name }))}
+                defaultServiceId={service.id}
               />
             </div>
 

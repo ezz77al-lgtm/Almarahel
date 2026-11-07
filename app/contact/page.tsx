@@ -3,7 +3,11 @@ import { Breadcrumbs } from '@/components/layout/breadcrumbs';
 import { SectionHeader } from '@/components/section-header';
 import { WhatsAppCTA, PhoneCTA } from '@/components/layout/cta-buttons';
 import { siteConfig } from '@/config/site';
-import { buildWhatsAppUrl, buildServiceMessage, buildTelUrl } from '@/lib/whatsapp';
+import { buildWhatsAppUrl, buildServiceMessage, buildTelUrl, formatPhoneDisplay } from '@/lib/whatsapp';
+import { QuoteForm } from '@/components/contact/quote-form';
+import { CompanyCredentials } from '@/components/contact/company-credentials';
+import { services } from '@/data/services';
+import { cities } from '@/data/cities';
 import { MessageCircle, Phone, Mail } from 'lucide-react';
 
 import { JsonLd } from '@/components/seo/json-ld';
@@ -63,6 +67,11 @@ export default function ContactPage() {
                 <Phone className="h-8 w-8" />
               </div>
               <h3 className="font-bold text-lg mb-2">الهاتف</h3>
+              {siteConfig.phoneNumber && (
+                <p dir="ltr" className="font-bold text-lg text-primary mb-2">
+                  {formatPhoneDisplay(siteConfig.phoneNumber)}
+                </p>
+              )}
               <p className="text-sm text-muted-foreground mb-6">
                 اتصل بنا مباشرة لمناقشة احتياجاتك والحصول على عرض سعر.
               </p>
@@ -87,6 +96,22 @@ export default function ContactPage() {
               </a>
             </div>
           )}
+
+          {/* Quote form */}
+          <div className="mt-8 rounded-xl bg-card border border-border/50 shadow-md p-6 sm:p-8">
+            <h2 className="font-bold text-xl mb-2">اطلب عرض سعر</h2>
+            <p className="text-sm text-muted-foreground mb-6">
+              عبّئ البيانات التالية وسيفتح واتساب برسالة جاهزة تحتوي على تفاصيل طلبك.
+            </p>
+            <QuoteForm
+              services={services.map((s) => ({ id: s.id, name: s.name }))}
+              cities={cities.map((c) => ({ id: c.id, name: c.name }))}
+            />
+          </div>
+
+          <div className="mt-6">
+            <CompanyCredentials />
+          </div>
 
           {/* Note */}
           <div className="mt-8 p-4 rounded-lg bg-muted/50 border border-border/50 text-center">

@@ -41,7 +41,7 @@ export default function CitiesPage() {
               <section key={city.id} className="rounded-2xl overflow-hidden bg-card border border-border/50 shadow-sm">
                 {/* City Header */}
                 <div className="relative h-40 overflow-hidden">
-                  <img
+                  <img decoding="async"
                     src={city.image}
                     alt={city.imageAlt}
                     className="h-full w-full object-cover"

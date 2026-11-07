@@ -4,7 +4,7 @@ import { Breadcrumbs } from '@/components/layout/breadcrumbs';
 import { SectionHeader } from '@/components/section-header';
 import { ServiceCard } from '@/components/services/service-card';
 import { WhatsAppCTA } from '@/components/layout/cta-buttons';
-import { getCity, getCityById } from '@/data/cities';
+import { cities, getCity, getCityById } from '@/data/cities';
 import { getServicesByCity } from '@/data/services';
 import { getProjectsByCity } from '@/data/projects';
 import { ProjectCard } from '@/components/projects/project-card';
@@ -24,7 +24,7 @@ interface PageProps {
 
 import { JsonLd } from '@/components/seo/json-ld';
 export function generateStaticParams() {
-  return [{ slug: 'jeddah' }, { slug: 'riyadh' }, { slug: 'madinah' }, { slug: 'qassim' }];
+  return cities.map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -69,7 +69,7 @@ export default function CityPage({ params }: PageProps) {
 
         {/* Hero */}
         <div className="mt-6 relative rounded-2xl overflow-hidden h-72 lg:h-96 mb-8">
-          <img
+          <img decoding="async"
             src={city.image}
             alt={city.imageAlt}
             className="h-full w-full object-cover"

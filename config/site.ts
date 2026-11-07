@@ -3,32 +3,45 @@ export const siteConfig = {
   shortName: 'المراحل السريعة',
   description:
     'شركة المراحل السريعة تقدم خدمات تنظيف احترافية وتركيب أرضيات ودهانات داخلية في جدة والرياض والمدينة المنورة والقصيم. تواصل معنا للحصول على عرض سعر مخصص.',
-  // IMPORTANT: Set NEXT_PUBLIC_SITE_URL to the verified production domain before deployment.
+  // يُفضّل ضبط NEXT_PUBLIC_SITE_URL على النطاق النهائي المعتمد عند النشر.
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://almrahel.sa',
-  // Contact configuration
-  // TODO: Replace these placeholder numbers with the real company WhatsApp and phone numbers.
-  // The WhatsApp number must be in international format without + or spaces (e.g. 9665XXXXXXXX).
 
-  // Contact configuration
-  whatsappNumber:
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '966557906206',
-  phoneNumber:
-    process.env.NEXT_PUBLIC_PHONE_NUMBER || '966557906206',
+  // بيانات التواصل. رقم واتساب بالصيغة الدولية بدون + أو مسافات (مثال: 9665XXXXXXXX).
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '966557906206',
+  phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || '966557906206',
   email: process.env.NEXT_PUBLIC_EMAIL || '',
 
-  // Set to true when real contact details are configured
   contactConfigured: true,
 
-  // Social links — only set when verified
+  // روابط التواصل الاجتماعي: أضف الرابط الحقيقي فقط. الحقول الفارغة لا تظهر في الموقع.
   socialLinks: {
     twitter: '',
     facebook: '',
     instagram: '',
     linkedin: '',
+    snapchat: '',
+    tiktok: '',
   },
-// Analytics
-gaId: process.env.NEXT_PUBLIC_GA_ID || 'G-692YS31ML8',
-  // Search console verification
+
+  // بيانات الشركة الرسمية. أي حقل يُترك فارغاً لا يظهر في الموقع ولا في البيانات المنظمة.
+  // املأ الحقول بالبيانات الحقيقية فقط.
+  business: {
+    streetAddress: '',
+    locality: '',
+    region: '',
+    postalCode: '',
+    commercialRegister: '',
+    licenseNumber: '',
+    foundedYear: '',
+    openingHours: '',
+  },
+
+  // آخر تاريخ تم فيه تحديث محتوى الموقع الأساسي (يُستخدم في خريطة الموقع). حدّثه عند تعديل المحتوى.
+  contentUpdatedAt: '2026-11-05',
+
+  // Google Analytics
+  gaId: process.env.NEXT_PUBLIC_GA_ID || 'G-692YS31ML8',
+  // توكن التحقق من Google Search Console (اختياري)
   searchConsoleToken: process.env.NEXT_PUBLIC_SEARCH_CONSOLE_TOKEN || '',
 };
 

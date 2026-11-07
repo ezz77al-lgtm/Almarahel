@@ -64,7 +64,7 @@ export function HomeGlassFeature() {
           </div>
 
           <div className="relative">
-            <img
+            <img decoding="async"
               src="/services/glass-facades.webp"
               alt="تنظيف واجهة زجاجية لمبنى"
               className="rounded-xl shadow-2xl w-full h-[400px] object-cover"

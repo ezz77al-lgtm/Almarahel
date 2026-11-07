@@ -20,6 +20,7 @@ import { getCityServiceData, getCityServiceCombinations } from '@/data/city-serv
 import { getProjectsByService } from '@/data/projects';
 import { ProjectCard } from '@/components/projects/project-card';
 import Link from 'next/link';
+import { JsonLd } from '@/components/seo/json-ld';
 import { MapPin, CheckCircle, AlertCircle, ArrowLeft } from 'lucide-react';
 
 interface PageProps {
@@ -84,31 +85,23 @@ export default function CityServicePage({ params }: PageProps) {
     name: `${service.shortName} في ${city.name}`,
     description: data.description,
     url: `/cities/${city.slug}/${service.slug}`,
+    areaServed: [city.name],
   });
 
   const faqSchema = generateFAQSchema(data.faqs);
 
   return (
     <div className="pt-24 pb-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={faqSchema} />
 
       <div className="container mx-auto px-4 lg:px-8">
         <Breadcrumbs items={breadcrumbItems} />
 
         {/* Hero */}
         <div className="mt-6 relative rounded-2xl overflow-hidden h-72 lg:h-96 mb-8">
-          <img
+          <img decoding="async"
             src={service.image}
             alt={`${service.imageAlt} في ${city.name}`}
             className="h-full w-full object-cover"

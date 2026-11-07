@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { generateMetadata as generatePageMetadata, generateArticleSchema, generateBreadcrumbSchema, buildUrl } from '@/lib/seo';
 import { Breadcrumbs } from '@/components/layout/breadcrumbs';
 import { ArticleCard } from '@/components/blog/article-card';
-import { getArticle, getRelatedArticles } from '@/data/articles';
+import { articles, getArticle, getRelatedArticles } from '@/data/articles';
 import { getServiceById } from '@/data/services';
 import { getCityById } from '@/data/cities';
 import { WhatsAppCTA } from '@/components/layout/cta-buttons';
@@ -15,16 +15,7 @@ interface PageProps {
 
 import { JsonLd } from '@/components/seo/json-ld';
 export function generateStaticParams() {
-  return [
-    { slug: 'glass-facade-maintenance-tips' },
-    { slug: 'interior-vs-exterior-glass-cleaning' },
-    { slug: 'ceramic-vs-porcelain-differences' },
-    { slug: 'marble-care-maintenance' },
-    { slug: 'interior-painting-preparation' },
-    { slug: 'choosing-flooring-guide' },
-    { slug: 'office-cleaning-importance' },
-    { slug: 'post-construction-cleaning-guide' },
-  ];
+  return articles.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -137,7 +128,7 @@ export default function ArticlePage({ params }: PageProps) {
         <div className="mt-6 max-w-3xl mx-auto">
           {/* Hero image */}
           <div className="relative rounded-2xl overflow-hidden h-64 lg:h-80 mb-6">
-            <img
+            <img decoding="async"
               src={article.image}
               alt={article.imageAlt}
               className="h-full w-full object-cover"

@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  ...(siteConfig.searchConsoleToken
+    ? { verification: { google: siteConfig.searchConsoleToken } }
+    : {}),
 };
 
 export default function RootLayout({

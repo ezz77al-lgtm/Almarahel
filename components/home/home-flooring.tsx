@@ -32,7 +32,7 @@ export function HomeFlooring() {
               className="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 block"
             >
               <div className="relative h-48 overflow-hidden">
-                <img
+                <img decoding="async"
                   src={service.image}
                   alt={service.imageAlt}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"

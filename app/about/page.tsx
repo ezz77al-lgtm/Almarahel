@@ -3,6 +3,7 @@ import { Breadcrumbs } from '@/components/layout/breadcrumbs';
 import { SectionHeader } from '@/components/section-header';
 import { WhatsAppCTA } from '@/components/layout/cta-buttons';
 import { siteConfig } from '@/config/site';
+import { CompanyCredentials } from '@/components/contact/company-credentials';
 import { services } from '@/data/services';
 import { cities } from '@/data/cities';
 import { Sparkles, MapPin, CheckCircle } from 'lucide-react';
@@ -87,6 +88,8 @@ export default function AboutPage() {
                 العملاء إلى الخدمات المتوفرة في مناطقهم.
               </p>
             </section>
+
+            <CompanyCredentials />
 
             <div className="p-8 rounded-xl bg-primary text-white text-center">
               <Sparkles className="h-8 w-8 mx-auto mb-4 text-accent" />
